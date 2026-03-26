@@ -206,65 +206,65 @@
     </div>
   </section>
 
-  <section id="aluno" class="section area-aluno">
-    <h2>Área do Aluno</h2>
-    <p class="aluno-subtitulo">
-      Crie seu acesso e entre na plataforma para assistir às aulas e acessar os materiais.
-    </p>
-    <div class="aluno-box">
-      <div class="login-card login-card-pro" id="loginCard">
-        <div class="login-topo">
-          <div class="login-icon">🎓</div>
-          <h3>Acessar plataforma</h3>
-          <p>
-            No primeiro acesso, crie seu login com e-mail e senha. Depois, entre normalmente.
-          </p>
-
-          <div class="certificado-box">
-            <h3>Gerar Certificado</h3>
-            <p>Disponível somente para alunos que concluíram o curso.</p>
-
-            <input type="text" id="nomeCertificado" placeholder="Digite seu nome completo" />
-
-            <input type="text" id="cpfCertificado" placeholder="Digite seu CPF" />
-
-            <label style="display:block; margin:10px 0;">
-              <input type="checkbox" id="concluiuCurso" />
-              Declaro que concluí o curso
-            </label>
-
-            <button class="btn" onclick="gerarCertificado()">Gerar Certificado</button>
-
-            <p id="mensagemCertificado" style="color:red;"></p>
-          </div>
-        </div>
-
-        <div class="campo">
-          <label for="emailAluno">E-mail</label>
-          <input type="email" id="emailAluno" placeholder="Digite seu e-mail" />
-        </div>
-
-        <div class="campo">
-          <label for="senhaAluno">Senha</label>
-          <div class="senha-wrap">
-            <input type="password" id="senhaAluno" placeholder="Digite sua senha" />
-            <button type="button" class="mostrar-senha" onclick="alternarSenha()">Mostrar</button>
-          </div>
-        </div>
-
-        <div class="aluno-botoes">
-          <button class="btn" onclick="entrarAluno()">Entrar</button>
-          <button class="btn btn-secundario" onclick="criarAcessoAluno()">Criar acesso</button>
-        </div>
-
-        <p class="login-dica">
-          O acesso criado fica salvo neste navegador.
+ <section id="aluno" class="section area-aluno">
+  <h2>Área do Aluno</h2>
+  <p class="aluno-subtitulo">
+    Crie seu acesso e entre na plataforma para assistir às aulas e acessar os materiais.
+  </p>
+  <div class="aluno-box">
+    <div class="login-card login-card-pro" id="loginCard">
+      <div class="login-topo">
+        <div class="login-icon">🎓</div>
+        <h3>Acessar plataforma</h3>
+        <p>
+          No primeiro acesso, crie seu login com e-mail e senha. Depois, entre normalmente.
         </p>
 
-        <p id="mensagemLogin" class="mensagem-login"></p>
+        <div class="certificado-box">
+          <h3>Gerar Certificado</h3>
+          <p>Disponível somente para alunos que concluíram o curso.</p>
+
+          <input type="text" id="nomeCertificado" placeholder="Digite seu nome completo">
+
+          <input type="text" id="cpfCertificado" placeholder="Digite seu CPF">
+
+          <label style="display:block; margin:10px 0;">
+            <input type="checkbox" id="concluiuCurso">
+            Declaro que concluí o curso
+          </label>
+
+          <button class="btn" onclick="gerarCertificado()">Gerar Certificado</button>
+
+          <p id="mensagemCertificado" style="color:red;"></p>
+        </div>
       </div>
+
+      <div class="campo">
+        <label for="emailAluno">E-mail</label>
+        <input type="email" id="emailAluno" placeholder="Digite seu e-mail" />
+      </div>
+
+      <div class="campo">
+        <label for="senhaAluno">Senha</label>
+        <div class="senha-wrap">
+          <input type="password" id="senhaAluno" placeholder="Digite sua senha" />
+          <button type="button" class="mostrar-senha" onclick="alternarSenha()">Mostrar</button>
+        </div>
+      </div>
+
+      <div class="aluno-botoes">
+        <button class="btn" onclick="entrarAluno()">Entrar</button>
+        <button class="btn btn-secundario" onclick="criarAcessoAluno()">Criar acesso</button>
+      </div>
+
+      <p class="login-dica">
+        O acesso criado fica salvo neste navegador.
+      </p>
+
+      <p id="mensagemLogin" class="mensagem-login"></p>
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="section testimonials">
     <h2>Depoimentos</h2>
