@@ -240,9 +240,21 @@
           </p>
 <div class="certificado-box">
   <h3>Gerar Certificado</h3>
-  <p>Após concluir o curso, gere seu certificado personalizado.</p>
-  <input type="text" id="nomeCertificado" placeholder="Digite seu nome completo" />
+  <p>Disponível somente para alunos que concluíram o curso.</p>
+
+  <input type="text" id="nomeCertificado" placeholder="Digite seu nome completo">
+
+  <input type="text" id="cpfCertificado" placeholder="Digite seu CPF">
+
+  <label style="display:block; margin:10px 0;">
+    <input type="checkbox" id="concluiuCurso">
+    Declaro que concluí o curso
+  </label>
+
   <button class="btn" onclick="gerarCertificado()">Gerar Certificado</button>
+
+  <p id="mensagemCertificado" style="color:red;"></p>
+</div>
 </div>
         </div>
 
