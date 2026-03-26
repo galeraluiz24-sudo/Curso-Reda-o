@@ -171,16 +171,18 @@
     }
 
     .assinaturas {
-      margin-top: 55px;
+      margin-top: 48px;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 30px;
       align-items: end;
       position: relative;
       z-index: 2;
       max-width: 420px;
       margin-left: auto;
       margin-right: auto;
+      page-break-inside: avoid;
+      break-inside: avoid;
     }
 
     .assinatura {
@@ -188,7 +190,7 @@
     }
 
     .assinatura-img {
-      width: 220px;
+      width: 210px;
       max-width: 100%;
       display: block;
       margin: 0 auto 8px;
@@ -197,7 +199,7 @@
     .assinatura .linha {
       border-top: 2px solid #333;
       margin: 0 auto 10px;
-      width: 260px;
+      width: 250px;
       max-width: 100%;
     }
 
@@ -213,7 +215,7 @@
     }
 
     .rodape {
-      margin-top: 32px;
+      margin-top: 28px;
       text-align: center;
       color: #666;
       font-size: 15px;
@@ -242,11 +244,9 @@
       z-index: 2;
     }
 
-    /* ===== AJUSTE A4 SEM QUEBRAR O MODELO ===== */
-
     @page {
       size: A4 landscape;
-      margin: 10mm;
+      margin: 8mm;
     }
 
     @media print {
@@ -262,80 +262,113 @@
       .certificado-wrapper {
         width: 100%;
         max-width: none;
-        min-height: 180mm;
         margin: 0;
         padding: 10px;
         border: 8px solid #c9a227;
         box-shadow: none;
+        page-break-inside: avoid;
+        break-inside: avoid;
       }
 
       .certificado {
-        width: 100%;
-        min-height: 0;
+        min-height: auto;
         height: auto;
-        padding: 38px 42px;
+        padding: 34px 40px;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      .marca-agua {
+        font-size: 78px;
+      }
+
+      .topo .curso {
+        font-size: 18px;
+        margin-bottom: 8px;
       }
 
       .topo h1 {
-        font-size: 42px;
+        font-size: 40px;
+      }
+
+      .linha-decorativa {
+        margin: 14px auto 22px;
+      }
+
+      .conteudo {
+        margin-top: 10px;
       }
 
       .conteudo p {
-        font-size: 22px;
-        line-height: 1.55;
+        font-size: 21px;
+        line-height: 1.45;
+        margin: 8px 0;
       }
 
       .nome-aluno {
-        font-size: 36px;
-        margin: 22px auto 10px;
-        padding: 14px 8px;
+        font-size: 34px;
+        margin: 20px auto 10px;
+        padding: 12px 8px;
       }
 
       .cpf-aluno {
-        font-size: 20px;
-        margin-bottom: 16px;
+        font-size: 18px;
+        margin-bottom: 14px;
       }
 
       .detalhes {
-        margin-top: 26px;
-        gap: 18px;
+        margin-top: 22px;
+        gap: 16px;
       }
 
       .detalhe-box {
-        padding: 14px;
+        padding: 12px;
       }
 
       .detalhe-box strong {
-        font-size: 16px;
+        font-size: 15px;
+        margin-bottom: 6px;
       }
 
       .detalhe-box span {
-        font-size: 18px;
+        font-size: 17px;
       }
 
       .assinaturas {
-        margin-top: 38px;
+        margin-top: 28px;
+        gap: 20px;
       }
 
       .assinatura-img {
-        width: 190px;
+        width: 170px;
+        margin-bottom: 6px;
       }
 
       .assinatura .linha {
-        width: 230px;
+        width: 210px;
+        margin-bottom: 8px;
+      }
+
+      .assinatura .nome-ass {
+        font-size: 17px;
+      }
+
+      .assinatura .cargo {
+        font-size: 14px;
       }
 
       .rodape {
-        margin-top: 24px;
-        font-size: 13px;
+        margin-top: 18px;
+        font-size: 12px;
       }
 
       .selo {
-        right: 28px;
-        bottom: 28px;
-        width: 100px;
-        height: 100px;
-        font-size: 12px;
+        right: 24px;
+        bottom: 24px;
+        width: 88px;
+        height: 88px;
+        font-size: 10px;
+        border-width: 4px;
       }
     }
 
@@ -385,7 +418,6 @@
 
   <div class="certificado-wrapper">
     <div class="certificado">
-
       <div class="marca-agua">Certificado</div>
 
       <div class="topo">
@@ -440,7 +472,6 @@
       <div class="selo">
         Certificado<br>Oficial<br>do Curso
       </div>
-
     </div>
   </div>
 
