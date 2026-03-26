@@ -12,6 +12,8 @@ function alternarSenha() {
   const senhaInput = document.getElementById("senhaAluno");
   const botao = document.querySelector(".mostrar-senha");
 
+  if (!senhaInput || !botao) return;
+
   if (senhaInput.type === "password") {
     senhaInput.type = "text";
     botao.textContent = "Ocultar";
@@ -25,6 +27,8 @@ function criarAcessoAluno() {
   const emailInput = document.getElementById("emailAluno");
   const senhaInput = document.getElementById("senhaAluno");
   const mensagem = document.getElementById("mensagemLogin");
+
+  if (!emailInput || !senhaInput || !mensagem) return;
 
   const email = normalizarEmail(emailInput.value);
   const senha = senhaInput.value.trim();
@@ -63,6 +67,8 @@ function entrarAluno() {
   const senhaInput = document.getElementById("senhaAluno");
   const mensagem = document.getElementById("mensagemLogin");
 
+  if (!emailInput || !senhaInput || !mensagem) return;
+
   const email = normalizarEmail(emailInput.value);
   const senha = senhaInput.value.trim();
 
@@ -99,10 +105,19 @@ function entrarAluno() {
 }
 
 function gerarCertificado() {
-  const nome = document.getElementById("nomeCertificado").value.trim();
-  const cpf = document.getElementById("cpfCertificado").value.trim();
-  const concluiu = document.getElementById("concluiuCurso").checked;
+  const nomeInput = document.getElementById("nomeCertificado");
+  const cpfInput = document.getElementById("cpfCertificado");
+  const concluiuInput = document.getElementById("concluiuCurso");
   const mensagem = document.getElementById("mensagemCertificado");
+
+  if (!nomeInput || !cpfInput || !concluiuInput || !mensagem) {
+    alert("Os campos do certificado não foram encontrados no HTML.");
+    return;
+  }
+
+  const nome = nomeInput.value.trim();
+  const cpf = cpfInput.value.trim();
+  const concluiu = concluiuInput.checked;
 
   mensagem.style.color = "#dc2626";
 
@@ -125,9 +140,10 @@ function gerarCertificado() {
 
   const nomeCodificado = encodeURIComponent(nome);
   const cpfCodificado = encodeURIComponent(cpf);
+  const cargaCodificada = encodeURIComponent("20 horas");
 
   window.open(
-    `certificado.html?nome=${nomeCodificado}&cpf=${cpfCodificado}&carga=${encodeURIComponent("20 horas")}`,
+    `certificado.html?nome=${nomeCodificado}&cpf=${cpfCodificado}&carga=${cargaCodificada}`,
     "_blank"
   );
 }
