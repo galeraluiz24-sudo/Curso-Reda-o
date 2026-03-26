@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Certificado de Conclusão</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -239,10 +240,42 @@
       z-index: 2;
     }
 
+    /* ===== AJUSTE A4 ===== */
+
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+
+    html, body {
+      width: 297mm;
+      height: 210mm;
+      margin: 0;
+      padding: 0;
+    }
+
+    .certificado-wrapper {
+      width: 297mm;
+      height: 210mm;
+      margin: 0 auto;
+      padding: 8mm;
+      box-sizing: border-box;
+    }
+
+    .certificado {
+      width: 100%;
+      height: 100%;
+      min-height: auto;
+      box-sizing: border-box;
+    }
+
     @media print {
-      body {
-        background: white;
+      html, body {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
         padding: 0;
+        background: white;
       }
 
       .acoes {
@@ -250,61 +283,32 @@
       }
 
       .certificado-wrapper {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
+        padding: 8mm;
+        border: 8px solid #c9a227;
         box-shadow: none;
-        border-width: 6px;
-        max-width: 100%;
       }
 
       .certificado {
-        min-height: 100vh;
+        width: 100%;
+        height: 100%;
+        min-height: auto;
       }
     }
 
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-
-      .certificado {
-        padding: 30px 20px;
-      }
-
-      .topo h1 {
-        font-size: 30px;
-      }
-
-      .conteudo p {
-        font-size: 18px;
-      }
-
-      .nome-aluno {
-        font-size: 28px;
-      }
-
-      .cpf-aluno {
-        font-size: 18px;
-      }
-
-      .detalhes,
-      .assinaturas {
-        grid-template-columns: 1fr;
-      }
-
-      .selo {
-        position: static;
-        margin: 30px auto 0;
-        transform: none;
-      }
-    }
   </style>
 </head>
 <body>
+
   <div class="acoes">
     <button onclick="window.print()">Imprimir / Salvar em PDF</button>
   </div>
 
   <div class="certificado-wrapper">
     <div class="certificado">
+
       <div class="marca-agua">Certificado</div>
 
       <div class="topo">
@@ -345,7 +349,7 @@
 
       <div class="assinaturas">
         <div class="assinatura">
-          <img src="assinatura.png" alt="Assinatura da Profª Valéria Paz" class="assinatura-img">
+          <img src="assinatura.png" class="assinatura-img">
           <div class="linha"></div>
           <div class="nome-ass">Profª Valéria Paz</div>
           <div class="cargo">Responsável pelo curso</div>
@@ -359,22 +363,19 @@
       <div class="selo">
         Certificado<br>Oficial<br>do Curso
       </div>
+
     </div>
   </div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
+
     const nome = params.get("nome");
     const cpf = params.get("cpf");
     const carga = params.get("carga");
 
-    if (nome) {
-      document.getElementById("nomeAluno").textContent = nome;
-    }
-
-    if (cpf) {
-      document.getElementById("cpfAluno").textContent = "CPF: " + cpf;
-    }
+    if (nome) document.getElementById("nomeAluno").textContent = nome;
+    if (cpf) document.getElementById("cpfAluno").textContent = "CPF: " + cpf;
 
     if (carga) {
       document.getElementById("cargaHoraria").textContent = carga;
@@ -382,8 +383,9 @@
     }
 
     const hoje = new Date();
-    const dataFormatada = hoje.toLocaleDateString("pt-BR");
-    document.getElementById("dataEmissao").textContent = dataFormatada;
+    document.getElementById("dataEmissao").textContent =
+      hoje.toLocaleDateString("pt-BR");
   </script>
+
 </body>
 </html>
